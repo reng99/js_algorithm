@@ -40,15 +40,23 @@ let arr = new Array();
 
 `push()`方法可向数组的**末尾**添加一个或者多个元素。
 
-**5. pop()**
+**5. unshift(newElement1,...newElementN)**
 
-`pop()`方法用于删除并返回数组的最后一个元素。
+`unshift()`方法可向数组的**开头**添加一个或者多个元素。
 
-**6. reverse()**
+**6. pop()**
+
+`pop()`方法用于删除并返回数组的**最后**一个元素。
+
+**7. shift()**
+
+`shift()`方法可以删除数组的**第一**个元素。
+
+**8. reverse()**
 
 `reverse()`方法用于数组的反转。
 
-**7. sort(sortFn)**
+**9. sort(sortFn)**
 
 `sort()`方法是对数组的元素进行排序。参数sortFn可选，规定排序顺序，必须是函数。
 
@@ -69,3 +77,21 @@ arr.sort((el1, el2) => {
 }); 
 console.log(arr); // 15, 10, 5, 1, 0
 ```
+
+**10. forEach(function(currentValue, index, arr){}, thisValue)**
+
+`forEach()`方法用于调用数组的每个元素，并将元素传递给回调函数。参数`function(currentValue, index, arr){}`是一个回调函数。thisValue可选，传递给函数的值一般用 "this" 值，如果这个参数为空， "undefined" 会传递给 "this" 值。
+
+**11. every(function(currentValue, index, arr){}, thisValue)**
+
+`every()`方法用于检测数组中所有元素是否符合指定条件，如果数组中检测到有一个元素不满足，则整个表达式返回`false`，且剩余的元素不再检查。如果所有的元素都满足条件，则返回`true`。
+
+**11. some(function(currentValue,index,arr),thisValue)**
+
+`some()`方法用于检测数组中元素是否满足指定条件。只有有一个符合就返回`true`，剩余的元素不再检查。如果所有元素都不符合条件，则返回`false`。
+
+**12. reduce(function(total, currentValue, currentIndex, arr), initialValue)**
+
+`reduce()`方法接收一个函数作为累加器，数组中的每个值（从左到右）开始缩减，最终为一个值。回调函数的四个参数的意义如下：total，必需，初始值, 或者计算结束后的返回值；currentValue，必需，当前元素；currentIndex,可选,当前元素的索引;arr,可选,当前元素所属的数组对象。`initialValue`，可选，传递给函数的初始值。
+
+数组是比较重要的数据结构，在后期讲到的算法中多多少少使用到～
