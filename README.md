@@ -8,6 +8,12 @@
 
 [数组](./src/array/)
 
+算法的内容如下：
+
+> 相关算法
+
+[冒泡排序](./bubble_sort/)
+
 > 许可证
 
 [MIT](./LICENSE)
