@@ -12,7 +12,7 @@
 
 > 相关算法
 
-[冒泡排序](./bubble_sort/)
+[冒泡排序](./src/bubble_sort/)
 
 > 许可证
 
