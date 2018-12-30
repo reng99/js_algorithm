@@ -4,7 +4,9 @@
 
 ```javascript
 /**
-* @param arrNum 数字数组
+* @method bubbleSort
+* @param { Array } arrNum 传入的数字数组
+* @return { Array } 返回冒泡排序后的数组
 */
 function bubbleSort(arrNum){
     let numElements = arrNum.length,
@@ -23,9 +25,10 @@ function bubbleSort(arrNum){
 }
 
 /**
-* @param arr 数组
-* @param index1 索引1
-* @param index2 索引2
+* @method swap
+* @param { Array } arr 进行交换的数组
+* @param { Number } index1 数组的索引1
+* @param { Number } index2 数组的索引2
 */
 function swap(arr, index1, index2){
     let temp = arr[index1];
