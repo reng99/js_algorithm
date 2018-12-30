@@ -12,11 +12,9 @@
 
 > 相关算法
 
-|1|2|
-|:-:|:-:|
-|[冒泡排序](./src/bubble_sort/)|[选择排序](./src/selection_sort/)|
-
-
+|1|2|3|
+|:-:|:-:|:-:|
+|[冒泡排序](./src/bubble_sort/)|[选择排序](./src/selection_sort/)|[插入排序](./src/insertion_sort/)|
 
 > 许可证
 
