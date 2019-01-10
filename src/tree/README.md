@@ -13,7 +13,7 @@
 ```javascript
 /**
 * @method Node 节点类
-* @param { String } data 元素数据
+* @param { Num } data 元素数据
 * @param { Object } left 二叉树左节点链接
 * @param { Object } right 二叉树右节点链接
 */
@@ -43,7 +43,7 @@ function BST(){
 
 /**
 * @methods insert 插入数据
-* @param { String } data 元素数据
+* @param { Num } data 元素数据
 */
 function insert(data) {
     let n = new Node(data, null, null);
@@ -118,4 +118,101 @@ function postOrder(node){
 
 查找最小值和最大值
 
-> 有待补充
+```javascript
+/**
+* @methods getMin 获取最小
+* @return { Num } 返回最小的数值
+*/
+function getMin(){
+    let current = this.root;
+    while(!(current.left == null)){
+        current = current.left;
+    }
+    return current.data;
+}
+
+/**
+* @methods getMax 获取最大
+* @return { Num } 返回最大的数值
+*/
+function getMax(){
+    let current = this.root;
+    while(!(current.right == null)){
+        current = current.right;
+    }
+    return current.data;
+}
+```
+
+查找指定的节点
+
+```javascript
+/**
+* @methods find 查找
+* @param { Num } data 指定查找的数字
+* @return { Object } 返回最大的对象
+*/
+function find(data){
+    let current = this.root;
+    while(current != null){
+        if(current.data == data){
+            return current;
+        }else if(data < current.data){
+            current = current.left;
+        }else{
+            current = current.right;
+        }
+    }
+    return null;
+}
+```
+
+删除节点【重点难点】⚠️
+
+```javascript
+/**
+* @methods remove 删除函数
+* @param { Num } data 指定查找的数字
+*/
+function remove(data){
+    root = removeNode(this.root, data);
+}
+
+/**
+* @methods removeNode 移除节点函数
+* @param { Object } node 根节点
+* @param { Num } data 移除的数据
+* @return { Object } 删除节点的下一个节点
+*/
+function removeNode(node, data){
+    if(node == null){
+        return null;
+    }
+    if(data == node.data){
+        // 没有子节点的节点
+        if(node.left == null && node.right == null){
+            return null
+        }
+        // 没有左子节点的节点
+        if(node.left == null){
+            return node.right;
+        }
+        // 没有右子节点的节点
+        if(node.right == null){
+            return node.left;
+        }
+        // 有两个子节点的节点
+        let tempNode = getSmallest(node.right);
+        node.data = tempNode.data; // 右子树的最小值替换移除的值
+        node.right = removeNode(node.right, tempNode.data); // 删除右子树最小节点的树
+        return node;
+    }else if(data < node.data){
+        node.left = removeNode(node.left, data);
+        return node;
+    }else{
+        node.right = removeNode(node.right, data);
+        return node;
+    }
+}
+
+```
