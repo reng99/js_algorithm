@@ -31,3 +31,91 @@ function show(){
     return this.data;
 }
 ```
+
+```javascript
+/**
+* @method BST 二叉查找树类
+*/
+function BST(){
+    this.root = null;
+    this.insert = insert;
+}
+
+/**
+* @methods insert 插入数据
+* @param { String } data 元素数据
+*/
+function insert(data) {
+    let n = new Node(data, null, null);
+    if(this.root == null){
+        this.root = n;
+    }else{
+        let current = this.root;
+        let parent;
+        while(true){
+            parent = current;
+            if(data < current.data){
+                current = current.left;
+                if(current == null){
+                    parent.left = n;
+                    break;
+                }
+            }else{
+                current = current.right;
+                if(current == null){
+                    parent.right = n;
+                    break;
+                }
+            }
+        }
+    }
+}
+```
+
+二叉查找树的遍历，分为下面的三种遍历：中序、先序和后序遍历。
+
+```javascript
+/**
+* @methods inOrder 中序遍历
+* @param { Object } node 节点数据
+*/
+function inOrder(node){
+    if(!(node ==  null)){
+        inOrder(node.left);
+        console.log(node.show()+' ');
+        inOrder(node.right);
+    }
+}
+```
+
+```javascript
+/**
+* @methods preOrder 先序遍历
+* @param { Object } node 节点数据
+*/
+function preOrder(node){
+    if(!(node ==  null)){
+        console.log(node.show()+' ');
+        inOrder(node.left);
+        inOrder(node.right);
+    }
+}
+```
+
+```javascript
+/**
+* @methods postOrder 后序遍历
+* @param { Object } node 节点数据
+*/
+function postOrder(node){
+    if(!(node ==  null)){
+        inOrder(node.left);
+        inOrder(node.right);
+        console.log(node.show()+' ');
+    }
+}
+```
+
+查找最小值和最大值
+
+> 有待补充
