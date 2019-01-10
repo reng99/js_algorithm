@@ -6,9 +6,9 @@
 
 > 数据结构
 
-|1|2|3|4|5|6|7|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|[数组](./src/array/)|[栈](./src/stack/)|[队列](./src/queue/)|[链表](./src/linked_list/)|[字典](./src/dictionary/)|[散列](./src/hash/)|[树](./src/tree/)|
+|1|2|3|4|5|6|7|8|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|[数组](./src/array/)|[栈](./src/stack/)|[队列](./src/queue/)|[链表](./src/linked_list/)|[字典](./src/dictionary/)|[散列](./src/hash/)|[集合](./src/set/)|[树](./src/tree/)|
 
 算法的内容如下：
 
