@@ -36,7 +36,44 @@ function Graph(v){
         this.adj[i] = [];
         this.adj[i].push('');
     }
+    // 添加边
     this.addEdge = addEdge;
     this.toString = toString;
 }
 ```
+
+```javascript
+/**
+* @method addEdge 添加边函数
+* @param { Num } v 顶点
+* @param { Num } w 顶点
+*/
+function addEdge(v, w){
+    this.adj[v].push(w);
+    this.adj[w].push(v);
+    this.edges++;
+}
+```
+
+```javascript
+/**
+* @method showGraph 展示图
+*/
+function showGraph() {
+    for(let i = 0; i < this.vertices; i++){
+        putstr( i + '->' );
+        for(let j = 0; j < this.vertices; j++){
+            if(this.adj[i][j] != undefined){
+                putstr(this.adj[i][j] + ' ');
+            }
+        }
+        print();
+    }
+}
+```
+
+### 搜索图
+
+> 深度优先搜索和广度优先搜索
+
+有待补充...
