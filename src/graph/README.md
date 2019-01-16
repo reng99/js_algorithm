@@ -76,4 +76,34 @@ function showGraph() {
 
 > 深度优先搜索和广度优先搜索
 
-有待补充...
+**深度优先搜索**
+
+深度优先搜索包括从一条路径的起始顶点开始追溯，直到到达最后一个顶点，然后回溯，继续追溯下一条路径，直到到达最后的顶点，如此往复，直到没有路径为止。
+
+```javascript
+// 将全部的顶点标志为没有访问过
+this.marked = [];
+for(let i = 0; i < this.vertices; i++){
+    this.marked[i] = false;
+}
+
+/**
+* @method dfs 深度优先搜索
+* @param { Num } v 顶点的位置
+*/
+function dfs(v){
+    this.marked[v] = true;
+    if(this.adj[v] != undefined){
+        console.log("Visited vertex: "+v);
+        this.adj[v].forEach((w,index)=>{
+            if(!this.marked[w]){
+                this.dfs(w);
+            }
+        })
+    }
+}
+```
+
+**广度优先搜索**
+
+> 有待补充...
