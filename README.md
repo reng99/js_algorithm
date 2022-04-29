@@ -22,3 +22,5 @@
 
 [MIT](./LICENSE)
 
+**js 数据结构会以电子书的形式展示出来，详情可关注 [Jimmy 的掘金](https://juejin.cn/user/1996368846261294)**
+
